@@ -6,14 +6,19 @@
 }
 
 :root {
-    --primary: #f59e0b;
-    --primary-dark: #d97706;
-    --dark: #1e293b;
-    --dark-light: #334155;
-    --gray: #64748b;
-    --light: #f8fafc;
-    --white: #ffffff;
-    --green: #10b981;
+    /* Primary Brand Color (Solar Orange) */
+    --primary: #FF8C00; 
+    --primary-dark: #E67E00;
+    
+    /* Secondary Brand Color (Deep Blue) */
+    --brand-blue: #0F172A; 
+    
+    /* Text & Neutrals */
+    --dark: #1E293B;
+    --dark-light: #475569;
+    --gray: #64748B;
+    --light: #F8FAFC;
+    --white: #FFFFFF;
 }
 
 body {
@@ -33,50 +38,25 @@ body {
 
 /* ===== HEADER ===== */
 .header {
-    background: var(--white);
-    border-bottom: 1px solid #e2e8f0;
+    background: var(--brand-blue); /* Changed to Deep Blue */
+    border-bottom: 1px solid #1E293B;
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
-.header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 24px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.logo-img {
-    height: 300px;
-    width: auto;
-    display: block;
-}
-.logo-icon { font-size: 24px; }
-
-.logo-text strong { color: var(--primary); }
-
-.nav {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-}
-
+/* Make the navigation links white so they are visible on the blue background */
 .nav a {
-    color: var(--dark-light);
+    color: #CBD5E1; 
     text-decoration: none;
     font-size: 15px;
     font-weight: 500;
     transition: color 0.2s;
 }
 
-.nav a:hover { color: var(--primary); }
+.nav a:hover { 
+    color: var(--primary); 
+}
 
 .btn-nav {
     background: var(--primary);
@@ -93,28 +73,23 @@ body {
 
 /* ===== HERO ===== */
 .hero {
-    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-    padding: 80px 0;
-}
-
-.hero-inner {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 60px;
-    align-items: center;
+    background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+    padding: 100px 0;
+    border-bottom: 1px solid #CBD5E1;
 }
 
 .hero h1 {
-    font-size: 48px;
-    line-height: 1.15;
-    margin-bottom: 20px;
-    color: var(--dark);
+    font-size: 52px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--brand-blue); /* Deep blue text */
+    font-weight: 800;
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 20px;
     color: var(--dark-light);
-    margin-bottom: 32px;
+    margin-bottom: 40px;
 }
 
 .hero-buttons {
@@ -160,15 +135,21 @@ body {
     cursor: pointer;
 }
 
+/* --- The Normal State of the Button --- */
 .btn-primary {
     background: var(--primary);
     color: white;
+    /* This adds a soft orange glow around the button */
+    box-shadow: 0 4px 14px 0 rgba(255, 140, 0, 0.39); 
 }
 
+/* --- What happens when you HOVER over the button --- */
 .btn-primary:hover {
     background: var(--primary-dark);
+    /* This physically moves the button UP by 2 pixels */
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+    /* This makes the glow bigger when you hover */
+    box-shadow: 0 6px 20px rgba(255, 140, 0, 0.5);
 }
 
 .btn-secondary {
@@ -220,18 +201,22 @@ body {
     gap: 24px;
 }
 
-.service-card {
+/* --- The Normal State of the Card --- */
+.service-card, .product-card {
     background: white;
-    padding: 32px;
-    border-radius: 16px;
-    border: 1px solid #e2e8f0;
-    transition: all 0.3s;
+    border: 1px solid #E2E8F0;
+    /* Slightly sharper corners = more modern */
+    border-radius: 12px; 
+    /* A very light shadow to make the card pop off the background */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
-.service-card:hover {
+/* --- What happens when you HOVER over the card --- */
+.service-card:hover, .product-card:hover {
+    /* The border turns orange */
     border-color: var(--primary);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    /* A deeper shadow to make it look like it's lifting off the page */
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 .service-icon {
@@ -326,8 +311,8 @@ body {
 
 /* ===== FOOTER ===== */
 .footer {
-    background: #0f172a;
-    color: #cbd5e1;
+    background: #020617; /* Even darker blue for the footer */
+    color: #CBD5E1;
     padding: 60px 0 20px;
 }
 
