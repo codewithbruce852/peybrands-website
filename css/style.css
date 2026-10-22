@@ -962,3 +962,119 @@ body {
     max-height: 250px;
     min-height: 200px;
 }
+/* =========================================
+   📱 MOBILE & TABLET RESPONSIVENESS
+   ========================================= */
+
+/* Tablets and smaller laptops (under 992px) */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 42px;
+    }
+    .product-catalog-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+}
+
+/* Phones (under 768px) */
+@media (max-width: 768px) {
+    /* 1. Fix the Header & Navigation */
+    .header-inner {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* 2. Fix the Hero Section */
+    .hero {
+        padding: 60px 0;
+    }
+    .hero-inner {
+        grid-template-columns: 1fr; /* Stack text on top of images */
+        text-align: center;
+        gap: 40px;
+    }
+    .hero h1 {
+        font-size: 36px;
+    }
+    .hero-buttons {
+        justify-content: center;
+        flex-direction: column;
+    }
+    .hero-stats {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .hero-image-grid {
+        margin-top: 20px;
+    }
+
+    /* 3. Fix the Services Grid */
+    .services-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+
+    /* 4. Fix the Services Detail Page (Image + Text layout) */
+    .service-detail {
+        grid-template-columns: 1fr; /* Stack image on top of text */
+        text-align: center;
+        gap: 20px;
+    }
+    .service-detail.alt {
+        padding: 20px;
+    }
+    .feature-list li {
+        text-align: left; /* Keep checklist aligned left */
+    }
+    .service-icon-large {
+        margin: 0 auto;
+        max-width: 150px;
+    }
+
+    /* 5. Fix the Products Grid */
+    .product-catalog-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+    .product-showcase {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        text-align: center;
+    }
+    .product-showcase:nth-child(even) .product-image {
+        order: 0; /* Reset alternating layout */
+    }
+    .product-features li {
+        text-align: left;
+    }
+
+    /* 6. Fix the Footer */
+    .footer-inner {
+        grid-template-columns: 1fr; /* Stack footer columns */
+        text-align: center;
+        gap: 30px;
+    }
+    .footer .logo-img {
+        margin: 0 auto; /* Center the footer logo */
+    }
+
+    /* 7. General Typography adjustments */
+    .page-header h1 {
+        font-size: 32px;
+    }
+    .section-header h2 {
+        font-size: 28px;
+    }
+    .cta h2 {
+        font-size: 28px;
+    }
+    .cta .btn-large {
+        width: 100%;
+    }
+}
